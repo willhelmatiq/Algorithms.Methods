@@ -30,24 +30,20 @@ public class BinarySearchTask {
         }
     }
 
-    static int binarySearch(int[] sortArray, int k){
+    static int binarySearch(int[] sortArray, int k) {
         int start = 0;
         int end = sortArray.length - 1;
         int m = (start + end) / 2;
-        while (start < end) {
+        while (start <= end) {
             if (k > sortArray[m]) {
                 start = m + 1;
-            } else if(k == sortArray[m]) {
+            } else if (k == sortArray[m]) {
                 return m + 1;
             } else {
                 end = m - 1;
             }
             m = (start + end) / 2;
         }
-
-        if (k == sortArray[m]) {
-            return m + 1;
-        } else
-            return -1;
+        return -1;
     }
 }
